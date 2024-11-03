@@ -1,0 +1,22 @@
+version: 3
+
+tasks:
+  build:
+      desc: Build the app
+      cmds:
+      - GOFLAGS=-mod=mod go build -o bin/go-cli ./main.go
+
+  run:
+      desc: Run the app
+      cmds:
+      - GOFLAGS=-mod=mod go run main.go
+
+  clean-ps:
+      desc: Remove all retrieved *.png files from a powershell
+      cmds:
+      - powershell -Command "Remove-Item -Path .\\*.png -Force"
+
+  clean:
+      desc: Remove all retrieved *.jpg files from a unix shell
+      cmds:
+      - rm -rf *.png
